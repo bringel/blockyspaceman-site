@@ -7,6 +7,7 @@ var bourbon = require('./bower_components/bourbon');
 var neat = require('./bower_components/neat');
 var babel = require('gulp-babel');
 var webserver = require('gulp-webserver');
+var del = require('del');
 
 var sassIncludePaths = [].concat(bourbon.includePaths, neat.includePaths);
 
@@ -19,7 +20,7 @@ gulp.task('polyfills', function () {
 });
 
 gulp.task('jade', function () {
-  return gulp.src('./templates/**/*.jade')
+  return gulp.src('./templates/!(includes)/*.jade')
     .pipe(jade())
     .pipe(gulp.dest('./dist'));
 });
@@ -49,6 +50,13 @@ gulp.task('server', ['build'], function (){
     .pipe(webserver(
       {liveReload: true, open: true}
     ));
+});
+
+gulp.task('clean', function () {
+  return del([
+    'dist/**',
+    '!dist'
+  ]);
 });
 
 gulp.task('build', ['polyfills','jade','styles','client-templates']);
