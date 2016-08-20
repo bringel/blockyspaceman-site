@@ -3,19 +3,17 @@ var concat = require('gulp-concat');
 var jade = require('gulp-jade');
 var namespace = require('gulp-jade-namespace');
 var sass = require('gulp-sass');
-var bourbon = require('./bower_components/bourbon');
-var neat = require('./bower_components/neat');
 var babel = require('gulp-babel');
 var webserver = require('gulp-webserver');
 var del = require('del');
 
-var sassIncludePaths = [].concat(bourbon.includePaths, neat.includePaths);
+var sassIncludePaths = ['./bower_components/bootstrap/scss']
 
 gulp.task('polyfills', function () {
   return gulp.src(['./bower_components/es6-shim/es6-shim.js',
                    './bower_components/fetch/fetch.js',
                    './node_modules/jade/**/runtime.js'])
-    .pipe(concat('pollyfills.js'))
+    .pipe(concat('polyfills.js'))
     .pipe(gulp.dest('./dist/scripts'));
 });
 
