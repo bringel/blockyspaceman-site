@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+  head
+    include ./includes/head.jade
+    link(rel="stylesheet" href="/styles/main.css")
+    
+  body
+    header
+      include ./includes/navbar.jade
+
+    section
+      h2 Minecraft Server Version
+      p Minecraft 1.9.4 with Minecraft Forge 1.9.4 - 12.17.0.1976
+      
+      h2 Current Mods
+      table
+    
+    section  
+      h1 Installation guide
+      
+      h2 Installing Minecraft and Minecraft Forge
+      
+      p First up we're going to install Minecraft 1.7.10 and Minecraft Forge. We need to run 1.7.10 before installing Minecraft Forge
+      
+      ol
+        li Open the Minecraft Launcher. In the bottom left corner, select "New Profile"
+        li Give it a name, then in the "Use version" dropdown, select "release 1.9.4"
+        li Save the profile and click the Play button. The launcher will download the correct version of Minecraft and start it. You don't need to start a game, just make sure that everything downloads
+        li Get the correct version of Minecraft Forge from the #[a(href="/downloads") Downloads page]
+        li Run the #[code .jar] file
+        
