@@ -1,7 +1,8 @@
+- var pageName = "map"
 doctype html
 html(lang="en")
 	head
-		title Minecraft Dynamic Map
+		title Blocky Spaceman - Minecraft Dynamic Map
 
 		meta(charset="utf-8")
 		meta(name="keywords", content="minecraft, map, dynamic")
@@ -33,6 +34,7 @@ html(lang="en")
 		script(type="text/javascript", src="js/map.js?_=2.3-2074")
 		script(type="text/javascript", src="js/hdmap.js?_=2.3-2074")
 		script(type="text/javascript", src="standalone/config.js?_=2.3-2074")
+		include ../includes/head_assets.jade
 
 		script(type="text/javascript").
 				$(document).ready(function() {
@@ -40,8 +42,10 @@ html(lang="en")
 						container: $('#mcmap')
 					}, config));
 				});
-
+		
 	body
+	header
+		include ../includes/navbar.jade
 	noscript.
 		For full functionality of this site it is necessary to enable JavaScript.
 		Here are the <a href="http://www.enable-javascript.com/" target="_blank">
