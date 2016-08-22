@@ -1,0 +1,10 @@
+@import "variables";
+@import "mixins";
+
+.content{
+  @include make-col-ready(8);
+  @include make-col(8);
+  @include make-col-push(1);
+
+  margin-top: 25px;
+}

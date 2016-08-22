@@ -8,25 +8,51 @@ html(lang="en")
     header
       include ./includes/navbar.jade
 
-  section.container-fluid
-    section
-      h2 Minecraft Server Version
-      p Minecraft 1.9.4 with Minecraft Forge 1.9.4 - 12.17.0.1976
-      
-      h2 Current Mods
-      table
-    
-    section  
-      h1 Installation guide
-      
-      h2 Installing Minecraft and Minecraft Forge
-      
-      p First up we're going to install Minecraft 1.7.10 and Minecraft Forge. We need to run 1.7.10 before installing Minecraft Forge
-      
-      ol
-        li Open the Minecraft Launcher. In the bottom left corner, select "New Profile"
-        li Give it a name, then in the "Use version" dropdown, select "release 1.9.4"
-        li Save the profile and click the Play button. The launcher will download the correct version of Minecraft and start it. You don't need to start a game, just make sure that everything downloads
-        li Get the correct version of Minecraft Forge from the #[a(href="/downloads") Downloads page]
-        li Run the #[code .jar] file
+  div.container-fluid
+    div.content
+      section
+        section
+          h3 Minecraft Server Version
+          p Minecraft 1.9.4 with Minecraft Forge 1.9.4 - 12.17.0.1976
+          
+          h3 Current Mods
+          table
         
+        section  
+          h1 Installation guide
+          
+          h3 Installing Minecraft and Minecraft Forge
+          p All the files to install Minecraft Forge and the mods for the server are in one zip file on the #[a(href="/downloads") downloads page]. You should download it and unzip the contents now 
+          
+          p First up we're going to install Minecraft 1.7.10 and Minecraft Forge. We need to run 1.7.10 before installing Minecraft Forge
+          
+          ol
+            li Open the Minecraft Launcher. In the bottom left corner, select "New Profile"
+            li Give it a name, then in the "Use version" dropdown, select "release 1.9.4"
+            li Save the profile and click the Play button. The launcher will download the correct version of Minecraft and start it. You don't need to start a game, just start Minecraft and quit it
+            li Find the minecraft forge installer in the folder you extracted from the zip file. It should be called #[code forge-1.9.4-12.17.0.1976-installer.jar]
+            li Run the #[code .jar] file In windows you can right click on the file and #[code Open with >  java]. On #[s a more sane operating system] macOS or linux you can run #[code java -jar forge-1.9.4-12.17.0.1976-installer.jar]. This should add another new profile to your Minecraft launcher called "Forge". You'll want to use that profile any time you want to connect to the server
+            li Run the "Forge" profile to verify that everything was installed correctly
+          h3 Installing Mods
+
+          ol
+            li Now we're going to download and install all the mods needed to connect to the server. 
+            li Installing mods is done by placing either a .jar file or a .zip file in the Forge mods directory. On Windows the directory is located at #[code %appdata%/.minecraft/mods]. On macOS the directory is #[code ~/Library/Application Data/Minecraft/mods]
+            li Check the Mods table at the top of this page to see which mods are currently installed on this server
+            li Find the #[code mods] folder inside the folder you extracted from the zip file.
+            li Move all the downloaded files (they are usually .jar files) into the folder listed above
+            li Run Minecraft with your Forge profile again to ensure all the mods were installed correctly
+          h3 Connecting to the server
+
+          p The last step is to add the server and connect
+
+          ol 
+            li If you aren't already running Minecraft, start it with the "Forge" profile
+            li Go to the "Multiplayer" menu
+            li Click "Add Server"
+            li In the "Name" field, type something memorable like "BlockySpaceman" or "Friend server"
+            li In the "Server Address" field, type blockyspaceman.com
+            li Click "Done"
+            li Select your new server and click "Join Server"
+            li Go play some Minecraft!
+            
