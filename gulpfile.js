@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 var babel = require('gulp-babel');
 var webserver = require('gulp-webserver');
 var del = require('del');
+var rsync = require('gulp-rsync');
 
 var sassIncludePaths = ['./bower_components/bootstrap/scss']
 
@@ -67,3 +68,17 @@ gulp.task('watch', function() {
 });
 
 gulp.task('build', ['polyfills','jade','styles','client-templates']);
+
+gulp.task('deploy', ['build'], function(){
+  return gulp.src('./dist/**')
+    .pipe(rsync({
+      root: 'dist',
+      username: 'minecraft',
+      hostname: 'linode',
+      destination: '/var/www/html/blockyspaceman.com/public_html',
+      archive: true,
+      silent: false,
+      compress: true,
+      K: true,
+    }));
+});
