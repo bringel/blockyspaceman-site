@@ -1,10 +1,6 @@
 @import "variables";
 @import "mixins";
 
-.content{
-  margin-top: 25px;
-}
-
 .server-info{
   @include make-row();
    div {

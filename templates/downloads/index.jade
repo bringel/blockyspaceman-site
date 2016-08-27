@@ -1,0 +1,42 @@
+-
+  var pageName = 'downloads';
+  var files = [
+                { description: 'Minecraft Forge', version: '12.17.0.1976', filename: 'forge-1.9.4-12.17.0.1976-installer.jar' },
+                { description: "Biomes O'Plenty mod", version: '4.1.0.2.066', filename: 'BiomesOPlenty-1.9.4-4.1.0.2066-universal.jar' },
+                { description: 'Dynmap Forge mod', version: '2.3', filename: 'Dynmap-2.3-forge-1.9.4.jar' }
+              ]
+
+doctype html
+html(lang="en")
+  head
+    include ../includes/head.jade
+    link(rel="stylesheet", href="/styles/downloads.css")
+    
+  body
+    header
+      include ../includes/navbar.jade
+      
+    div.container-fluid
+      div.content 
+        h3 Everything you need to get started, in one place. 
+        span Download this handy zip file and extract it to find all the files for Minecraft Forge and all the mods that you need to install to connect to the server.
+      
+        div.current-version
+          div.file-table
+            h4 What's included?
+            table(class="table table-striped")
+              thead
+                tr
+                  th
+                  th Version
+                  th Filename
+              tbody
+                each file in files
+                  tr
+                    td #{file.description}
+                    td #{file.version}
+                    td #{file.filename}
+          div.download-link
+            div Version 1.0
+            div
+              a(class="btn btn-outline-primary btn-lg", href="/files/current.zip", download="blockyspaceman.zip") Download .zip

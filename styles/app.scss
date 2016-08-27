@@ -1,2 +1,9 @@
 @import "custom_variables";
 @import 'bootstrap';
+
+.content{
+  margin-top: 24px;
+  @include make-col-ready(10);
+  @include make-col(10);
+  @include make-col-push(1);
+}

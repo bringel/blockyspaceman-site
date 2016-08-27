@@ -1,0 +1,27 @@
+@import "variables";
+@import "mixins";
+
+.current-version{
+  @include make-row();
+  margin-top: 24px;
+}
+
+.file-table{
+  @include make-col-ready(6);
+  @include make-col(6);
+}
+
+.download-link{
+  @include make-col-ready(4);
+  @include make-col(4);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // padding-top: 24px;
+  div{
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+}

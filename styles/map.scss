@@ -1,3 +1,7 @@
 #mcmap{
   height: calc(100% - 54px); //possible that this will break if the navbar changes in height, but this is the best option that doesn't break everything else
 }
+
+.compass, .compass_flat{
+  right: 220px;
+}
