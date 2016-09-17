@@ -1,0 +1,14 @@
+div.status-wrapper
+  div.online-status
+    div(class="status-light")
+    div.online-text
+      if online
+        span The server is currently online
+      else 
+        span The server is currently offline
+  div.players
+    span Players online: #{players.now}
+  div.update-time
+    span Last updated: #{updatedText}
+  div.message
+    span #{motd}

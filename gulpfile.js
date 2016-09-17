@@ -13,7 +13,8 @@ var sassIncludePaths = ['./bower_components/bootstrap/scss']
 gulp.task('polyfills', function () {
   return gulp.src(['./bower_components/es6-shim/es6-shim.js',
                    './bower_components/fetch/fetch.js',
-                   './node_modules/jade/**/runtime.js'])
+                   './node_modules/jade/runtime.js',
+                   './bower_components/moment/moment.js'])
     .pipe(concat('polyfills.js'))
     .pipe(gulp.dest('./dist/scripts'));
 });
@@ -67,7 +68,7 @@ gulp.task('watch', function() {
   gulp.watch('./client-templates/**/*', ['client-templates']);
 });
 
-gulp.task('build', ['polyfills','jade','styles','client-templates']);
+gulp.task('build', ['polyfills','jade','styles', 'scripts', 'client-templates']);
 
 gulp.task('deploy', ['build'], function(){
   return gulp.src('./dist/**')

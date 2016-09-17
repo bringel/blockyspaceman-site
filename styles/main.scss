@@ -1,26 +1,38 @@
 @import "variables";
 @import "mixins";
 
+.content{
+  @include make-col-ready(7);
+  @include make-col(7);
+  @include make-col-push(1);
+}
 .server-info{
   @include make-row();
-   div {
-     @include make-col-ready(8);
-     @include make-col(8);
-     @include make-col-push(1);
-   }
+  //  div {
+  //    @include make-col-ready(8);
+  //    @include make-col(8);
+  //    @include make-col-push(1);
+  //  }
 }
 
 .mods-info{
   @include make-row();
-  div {
-    @include make-col-ready(4);
-    @include make-col(4);
-    @include make-col-push(1);
-  }
+  // div {
+  //   @include make-col-ready(4);
+  //   @include make-col(4);
+  //   @include make-col-push(1);
+  // }
 }
 
 .install-guide{
-  @include make-col-ready(8);
-  @include make-col(8);
+  @include make-row();
+  // @include make-col-ready(8);
+  // @include make-col(8);
+  // @include make-col-push(1);
+}
+
+.server-status-widget{
+  @include make-col-ready(3);
+  @include make-col(3);
   @include make-col-push(1);
 }
