@@ -1,3 +1,4 @@
+@import "custom_variables";
 @import "variables";
 @import "mixins";
 
@@ -5,34 +6,60 @@
   @include make-col-ready(7);
   @include make-col(7);
   @include make-col-push(1);
-}
-.server-info{
-  @include make-row();
-  //  div {
-  //    @include make-col-ready(8);
-  //    @include make-col(8);
-  //    @include make-col-push(1);
-  //  }
+
+  margin: 24px 0;
 }
 
-.mods-info{
-  @include make-row();
-  // div {
-  //   @include make-col-ready(4);
-  //   @include make-col(4);
-  //   @include make-col-push(1);
-  // }
-}
-
-.install-guide{
-  @include make-row();
-  // @include make-col-ready(8);
-  // @include make-col(8);
-  // @include make-col-push(1);
+.server-info, .mods-info, .install-guide{
+  display: flex;
 }
 
 .server-status-widget{
   @include make-col-ready(3);
   @include make-col(3);
   @include make-col-push(1);
+
+  font-size: 1.1em;
+
+  box-shadow: 0 3px 6px $gray;
+  height: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  margin: 24px 0;
+  padding: 15px;
+
+  & > div{
+    display: flex;
+    flex-direction :column;
+    border-bottom: 1px solid $gray-dark;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+
+  }
+
+  & > div:last-child{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .online-status{
+    padding: 15px;
+    margin: -15px;
+
+    padding-bottom: 10px;
+    margin-bottom: 10px;;
+
+    border-bottom: none;
+  }
+
+  .online{
+    background-color: $brand-success;
+    color: white;
+  }
+
+  .offline{
+    background-color: $brand-danger;
+    color: white;
+  }
 }
