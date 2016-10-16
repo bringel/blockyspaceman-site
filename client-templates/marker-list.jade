@@ -8,8 +8,9 @@ table(class="table table-striped")
   tbody
     each set in sets
       each marker, index in set.markers
+        - var url = "http://www.blockyspaceman.com/map/?worldname=spacestation&mapname=flat&zoom=6&x=" + marker.x +"&y=" + marker.y + "&z=" +marker.z;
         tr
           td //put the icon here
           td #{marker.label}
-          td #[a x: #{Math.trunc(marker.x)}, y: #{Math.trunc(marker.y)}, z: #{Math.trunc(marker.z)}]
+          td #[a(href=url) x: #{Math.trunc(marker.x)}, y: #{Math.trunc(marker.y)}, z: #{Math.trunc(marker.z)}]
           td #[pre #{index}]

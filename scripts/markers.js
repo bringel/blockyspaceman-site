@@ -4,7 +4,7 @@ function loadMarkers() {
       return result.json();
     }
   }).then(markerData => {
-    let anchor = document.querySelector("div#marker-list");
+    let anchor = document.querySelector("div#world-marker-list");
     let displayFunc = window.jade["marker-list"];
     let output = displayFunc(markerData);
     anchor.innerHTML = output;
