@@ -3,10 +3,33 @@
 doctype html
 html(lang="en")
   head
-    include ./includes/head.jade
+    include ../includes/head.jade
+    script(src="/scripts/markers.js", type="text/javascript")
   body
     header
-      include ./includes/navbar.jade
+      include ../includes/navbar.jade
 
   div.container-fluid
-  
+    div.content
+      p You can add markers to the dynamic map so that it's easy to find points of interest or landmarks
+      p 
+       | This #[a(href="https://github.com/webbukkit/dynmap/wiki/Using-markers") wiki page] from the dynmap github page lays out all the options for adding and managing markers
+      p Here's a basic overview (all of these commands are entered in the chat window while playing minecraft):
+      
+      h4 Adding a marker
+      p #[pre /dmarker add &lt;marker-label&gt; icon:&lt;icon-id&gt;]
+      p This command adds a new marker at your current location with the given label. The icon and is optional, icon options are listed further down on this page
+      
+      h4 Listing existing markers
+      p #[pre /dmarker list]
+      
+      
+      h4 Moving markers
+      p #[pre /dmarker movehere &lt;marker-label&gt;] or #[pre /dmarker movehere id:&lt;marker-id&gt;]
+      p Moves the marker specified with the label or ID to the current location
+      
+      h4 Deleting markers
+      p #[pre /dmarker delete &lt;marker-label&gt;] or #[pre /dmarker delete id:&lt;marker-id&gt;]
+      
+      h3 Spacestation World markers
+      div#marker-list

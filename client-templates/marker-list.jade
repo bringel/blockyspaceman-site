@@ -1,0 +1,15 @@
+table(class="table table-striped")
+  thead
+    tr
+      td
+      td Label
+      td Location
+      td ID
+  tbody
+    each set in sets
+      each marker, index in set.markers
+        tr
+          td //put the icon here
+          td #{marker.label}
+          td #[a x: #{Math.trunc(marker.x)}, y: #{Math.trunc(marker.y)}, z: #{Math.trunc(marker.z)}]
+          td #[pre #{index}]
