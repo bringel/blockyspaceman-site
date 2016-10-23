@@ -5,6 +5,7 @@ html(lang="en")
   head
     include ../includes/head.jade
     script(src="/scripts/markers.js", type="text/javascript")
+    link(rel="stylesheet", href="/styles/markers.css")
   body
     header
       include ../includes/navbar.jade
@@ -27,7 +28,9 @@ html(lang="en")
       
       h4 Adding a marker
       p #[pre /dmarker add &lt;marker-label&gt; icon:&lt;icon-id&gt;]
-      p This command adds a new marker at your current location with the given label. The icon and is optional, icon options are listed further down on this page
+      p This command adds a new marker at your current location with the given label. The icon and is optional, the possible icon values are listed below.
+      
+      div.marker-icons-list
       
       h4 Listing existing markers
       p #[pre /dmarker list]

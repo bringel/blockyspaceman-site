@@ -11,6 +11,21 @@ function loadMarkers() {
   });
 }
 
+function loadIcons() {
+  window.fetch("http://blockyspaceman.com/map/tiles/_markers_/image_data.json").then(result => {
+    if(result.ok){
+      return result.json();
+    }
+  }).then(icons => {
+    console.log(icons);
+    let anchor = document.querySelector("div.marker-icons-list");
+    let displayFunc = window.jade["marker-icon-list"];
+    let output = displayFunc(icons);
+    anchor.innerHTML = output;
+  })
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   loadMarkers();
+  loadIcons();
 }, false);

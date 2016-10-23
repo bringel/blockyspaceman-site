@@ -10,7 +10,7 @@ table(class="table table-striped")
       each marker, index in set.markers
         - var url = "http://www.blockyspaceman.com/map/?worldname=spacestation&mapname=flat&zoom=6&x=" + marker.x +"&y=" + marker.y + "&z=" +marker.z;
         tr
-          td //put the icon here
+          td #[img(src="http://www.blockyspaceman.com/map/tiles/_markers_/" + marker.icon + ".png")]
           td #{marker.label}
           td #[a(href=url) x: #{Math.trunc(marker.x)}, y: #{Math.trunc(marker.y)}, z: #{Math.trunc(marker.z)}]
           td #[pre #{index}]

@@ -1,0 +1,6 @@
+each iconName in Object.keys(icons).sort()
+  - var imageSource = "data:image/png\;base64," + icons[iconName];
+  div.icon-wrapper
+    span.icon-image
+      img(src=imageSource)
+    span.icon-name #{iconName}
